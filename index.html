@@ -18,8 +18,8 @@
       --gray-400:   #B0B0B0;
       --gray-600:   #717171;
       --gray-900:   #222222;
-      --radius:     14px;
-      --shadow:     0 1px 6px rgba(0,0,0,.09);
+      --radius:     16px;
+      --shadow:     0 2px 8px rgba(0,0,0,.09);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -29,34 +29,35 @@
       background: var(--gray-50);
       color: var(--gray-900);
       min-height: 100vh;
+      font-size: 16px;
     }
 
     /* ── Header ── */
     header {
       background: #fff;
       border-bottom: 1px solid var(--gray-100);
-      padding: 14px 20px;
+      padding: 16px 24px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       position: sticky;
       top: 0;
       z-index: 10;
     }
-    .logo { font-size: 22px; color: var(--red); font-weight: 800; letter-spacing: -1px; }
-    header h1 { font-size: 16px; font-weight: 700; }
-    header small { font-size: 12px; color: var(--gray-600); margin-left: auto; }
+    .logo { font-size: 24px; color: var(--red); font-weight: 800; letter-spacing: -1px; }
+    header h1 { font-size: 19px; font-weight: 700; }
+    header small { font-size: 14px; color: var(--gray-600); margin-left: auto; }
 
     /* ── Layout ── */
-    .container { max-width: 860px; margin: 0 auto; padding: 20px 14px 60px; }
+    .container { max-width: 900px; margin: 0 auto; padding: 22px 16px 70px; }
 
     /* ── Mode tabs ── */
     .tabs {
       display: flex;
       background: #fff;
       border-radius: 50px;
-      padding: 5px;
-      margin-bottom: 22px;
+      padding: 6px;
+      margin-bottom: 24px;
       box-shadow: var(--shadow);
     }
     .tab {
@@ -64,56 +65,56 @@
       border: none;
       background: transparent;
       border-radius: 50px;
-      padding: 11px 8px;
+      padding: 14px 10px;
       cursor: pointer;
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 16px;
+      font-weight: 700;
       color: var(--gray-600);
       transition: all .2s;
-      line-height: 1.3;
+      line-height: 1.35;
     }
     .tab.active { background: var(--red); color: #fff; }
-    .tab .sub { font-size: 11px; font-weight: 400; opacity: .85; display: block; }
+    .tab .sub { font-size: 13px; font-weight: 400; opacity: .9; display: block; margin-top: 2px; }
 
     /* ── Card ── */
     .card {
       background: #fff;
       border-radius: var(--radius);
-      padding: 20px;
+      padding: 24px;
       margin-bottom: 14px;
       box-shadow: var(--shadow);
     }
     .card-head {
-      font-size: 14px;
+      font-size: 17px;
       font-weight: 700;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
-      gap: 7px;
+      gap: 9px;
     }
     .card-head .ico {
-      width: 26px; height: 26px;
+      width: 30px; height: 30px;
       background: var(--red-bg);
-      border-radius: 8px;
+      border-radius: 9px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 14px;
+      font-size: 16px;
     }
 
     /* ── Grid ── */
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
     .full { grid-column: 1 / -1; }
 
     /* ── Field ── */
-    .field { display: flex; flex-direction: column; gap: 5px; }
-    .field label { font-size: 12px; font-weight: 600; color: var(--gray-600); }
+    .field { display: flex; flex-direction: column; gap: 8px; }
+    .field label { font-size: 15px; font-weight: 600; color: var(--gray-600); }
     .input-wrap { position: relative; display: flex; align-items: center; }
     .input-wrap input[type="number"] {
       width: 100%;
-      padding: 10px 38px 10px 11px;
+      padding: 13px 44px 13px 14px;
       border: 1.5px solid var(--gray-100);
-      border-radius: 10px;
-      font-size: 15px;
-      font-weight: 500;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 600;
       color: var(--gray-900);
       outline: none;
       transition: border-color .18s;
@@ -123,57 +124,78 @@
     .input-wrap input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; }
     .input-wrap input[type="number"]:focus { border-color: var(--red); }
     .unit {
-      position: absolute; right: 10px;
-      font-size: 12px; color: var(--gray-400);
-      pointer-events: none;
+      position: absolute; right: 12px;
+      font-size: 14px; color: var(--gray-400);
+      pointer-events: none; font-weight: 500;
     }
 
     /* ── Slider field ── */
-    .slider-field { display: flex; flex-direction: column; gap: 5px; }
-    .slider-field label { font-size: 12px; font-weight: 600; color: var(--gray-600); }
-    .slider-row { display: flex; align-items: center; gap: 10px; }
+    .slider-field { display: flex; flex-direction: column; gap: 8px; }
+    .slider-field label { font-size: 15px; font-weight: 600; color: var(--gray-600); }
+    .slider-row { display: flex; align-items: center; gap: 14px; }
     input[type="range"] {
       flex: 1; -webkit-appearance: none;
-      height: 4px; border-radius: 2px;
+      height: 6px; border-radius: 3px;
       background: var(--gray-100); outline: none; cursor: pointer;
     }
     input[type="range"]::-webkit-slider-thumb {
       -webkit-appearance: none;
-      width: 18px; height: 18px; border-radius: 50%;
+      width: 26px; height: 26px; border-radius: 50%;
       background: var(--red); cursor: pointer;
-      box-shadow: 0 1px 4px rgba(255,56,92,.35);
+      box-shadow: 0 2px 6px rgba(255,56,92,.4);
     }
     .sval {
-      min-width: 52px; text-align: right;
-      font-size: 14px; font-weight: 700; color: var(--red);
+      min-width: 64px; text-align: right;
+      font-size: 18px; font-weight: 700; color: var(--red);
     }
 
     /* ── Presets ── */
-    .presets { display: flex; gap: 7px; flex-wrap: wrap; }
+    .presets { display: flex; gap: 8px; flex-wrap: wrap; }
     .preset {
-      padding: 6px 13px;
+      padding: 8px 16px;
       border: 1.5px solid var(--gray-100);
       border-radius: 20px;
-      font-size: 12px; font-weight: 600;
+      font-size: 14px; font-weight: 600;
       cursor: pointer; background: #fff; color: var(--gray-600);
       transition: all .18s;
     }
     .preset:hover { border-color: var(--red); color: var(--red); }
 
+    /* ── Tip box (static, inline) ── */
+    .tip-box {
+      background: #FFFBF0;
+      border-left: 4px solid #F6C343;
+      border-radius: 10px;
+      padding: 16px 18px;
+      font-size: 15px;
+      color: #5A4A00;
+      margin-top: 0;
+      line-height: 1.75;
+    }
+    .tip-box strong { font-weight: 700; font-size: 15px; }
+    .tip-box .step { display: flex; gap: 10px; margin-top: 10px; }
+    .tip-box .step-num {
+      min-width: 24px; height: 24px;
+      background: #F6C343; border-radius: 50%;
+      font-size: 13px; font-weight: 800; color: #5A4A00;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 2px;
+    }
+
     /* ── Result card ── */
     .result-card {
       background: #fff;
       border-radius: var(--radius);
-      padding: 22px;
+      padding: 26px;
       box-shadow: var(--shadow);
     }
-    .result-title { font-size: 15px; font-weight: 700; margin-bottom: 18px; }
+    .result-title { font-size: 18px; font-weight: 700; margin-bottom: 20px; }
 
     .row {
       display: flex; justify-content: space-between; align-items: center;
-      padding: 10px 0;
+      padding: 14px 0;
       border-bottom: 1px solid var(--gray-50);
-      font-size: 13.5px;
+      font-size: 16px;
     }
     .row:last-child { border-bottom: none; }
     .row .lbl { color: var(--gray-600); }
@@ -181,20 +203,20 @@
     .row .val.plus { color: var(--green); }
     .row .val.minus { color: var(--orange); }
 
-    hr.div { border: none; border-top: 1px solid var(--gray-100); margin: 8px 0; }
+    hr.div { border: none; border-top: 1px solid var(--gray-100); margin: 6px 0; }
 
     /* ── Big result box ── */
     .big-result {
-      border-radius: 12px;
-      padding: 18px;
-      margin-top: 16px;
+      border-radius: 14px;
+      padding: 22px 18px;
+      margin-top: 18px;
       text-align: center;
     }
     .big-result.profit { background: var(--green-bg); }
     .big-result.loss   { background: #FDECEA; }
-    .big-result .lbl2  { font-size: 12px; font-weight: 600; margin-bottom: 4px; }
-    .big-result .amount { font-size: 30px; font-weight: 800; line-height: 1; }
-    .big-result .sub   { font-size: 12px; margin-top: 6px; opacity: .8; }
+    .big-result .lbl2  { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+    .big-result .amount { font-size: 38px; font-weight: 800; line-height: 1; }
+    .big-result .sub   { font-size: 14px; margin-top: 8px; opacity: .85; }
     .big-result.profit .lbl2,
     .big-result.profit .amount,
     .big-result.profit .sub { color: var(--green); }
@@ -203,53 +225,42 @@
     .big-result.loss .sub { color: #C0392B; }
 
     /* ── Occupancy bar ── */
-    .occ-section { margin-top: 18px; }
+    .occ-section { margin-top: 22px; }
     .occ-head {
       display: flex; justify-content: space-between;
-      font-size: 12.5px; color: var(--gray-600); margin-bottom: 7px;
+      font-size: 15px; color: var(--gray-600); margin-bottom: 9px;
     }
     .occ-head strong { color: var(--gray-900); font-weight: 700; }
-    .bar { height: 8px; background: var(--gray-100); border-radius: 4px; overflow: hidden; }
-    .bar-fill { height: 100%; border-radius: 4px; transition: width .4s; }
+    .bar { height: 10px; background: var(--gray-100); border-radius: 5px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 5px; transition: width .4s; }
 
     /* ── Badge ── */
     .badge {
-      display: inline-flex; align-items: center; gap: 5px;
-      padding: 5px 12px; border-radius: 20px;
-      font-size: 12px; font-weight: 700; margin-top: 10px;
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 16px; border-radius: 20px;
+      font-size: 14px; font-weight: 700; margin-top: 12px;
     }
     .badge.ok   { background: var(--green-bg); color: var(--green); }
     .badge.warn { background: var(--orange-bg); color: var(--orange); }
     .badge.bad  { background: #FDECEA; color: #C0392B; }
 
-    /* ── Tips ── */
-    .tip-box {
-      background: #FFFBF0;
-      border-left: 3px solid #F6C343;
-      border-radius: 8px;
-      padding: 12px 14px;
-      font-size: 12.5px;
-      color: #6B5A00;
-      margin-top: 14px;
-      line-height: 1.6;
-    }
-    .tip-box strong { font-weight: 700; }
-
     /* ── Reverse highlight ── */
     .req-box {
       background: var(--red-bg);
-      border-radius: 12px;
-      padding: 18px;
+      border-radius: 14px;
+      padding: 22px 18px;
       text-align: center;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
-    .req-box .lbl2 { font-size: 12px; font-weight: 600; color: var(--red); margin-bottom: 4px; }
-    .req-box .amount { font-size: 28px; font-weight: 800; color: var(--red); line-height: 1; }
-    .req-box .sub { font-size: 12px; color: var(--red); margin-top: 6px; opacity: .75; }
+    .req-box .lbl2 { font-size: 15px; font-weight: 600; color: var(--red); margin-bottom: 6px; }
+    .req-box .amount { font-size: 36px; font-weight: 800; color: var(--red); line-height: 1; }
+    .req-box .sub { font-size: 14px; color: var(--red); margin-top: 8px; opacity: .8; }
 
-    @media (max-width: 540px) {
+    @media (max-width: 560px) {
       .grid { grid-template-columns: 1fr; }
       .full { grid-column: 1; }
+      .big-result .amount { font-size: 30px; }
+      .req-box .amount { font-size: 28px; }
     }
   </style>
 </head>
@@ -282,10 +293,10 @@
     <div class="card">
       <div class="card-head"><span class="ico">⚡</span> 예시 불러오기</div>
       <div class="presets">
-        <button class="preset" onclick="loadPreset('a')">원룸 (본문 예시)</button>
-        <button class="preset" onclick="loadPreset('b')">방 2개 빌라</button>
-        <button class="preset" onclick="loadPreset('c')">방 3개 충정로형</button>
-        <button class="preset" onclick="loadPreset('d')">충정로 46길</button>
+        <button class="preset" onclick="loadPreset('a')">투룸 (본문 예시)</button>
+        <button class="preset" onclick="loadPreset('b')">쓰리룸 빌라</button>
+        <button class="preset" onclick="loadPreset('c')">쓰리룸 도심형 A</button>
+        <button class="preset" onclick="loadPreset('d')">쓰리룸 도심형 B</button>
       </div>
     </div>
 
@@ -317,10 +328,10 @@
       </div>
     </div>
 
-    <!-- 가격 -->
+    <!-- 가격 + 검증 팁 -->
     <div class="card">
       <div class="card-head"><span class="ico">💰</span> 1박 가격</div>
-      <div class="grid">
+      <div class="grid" style="margin-bottom:20px">
         <div class="field">
           <label>평일 (월~목)</label>
           <div class="input-wrap">
@@ -336,6 +347,23 @@
           </div>
         </div>
       </div>
+
+      <!-- 검증 팁 — 가격 카드 안에 바로 배치 -->
+      <div class="tip-box">
+        <strong>💡 이 가격이 맞는지 확인하는 방법</strong>
+        <div class="step">
+          <span class="step-num">1</span>
+          <span>에어비앤비 앱에서 <strong>게스트 모드</strong>로 접속 → 해당 매물 주변 동일 조건 숙소 검색</span>
+        </div>
+        <div class="step">
+          <span class="step-num">2</span>
+          <span>날짜 필터를 <strong>3월~8월 전체</strong>로 설정 → 이미 예약된 날짜(회색) 비율 확인</span>
+        </div>
+        <div class="step">
+          <span class="step-num">3</span>
+          <span>인테리어 유형(화이트·우드·그린)과 <strong>가격대가 비슷한 매물</strong>의 점유율을 아래 슬라이더에 반영</span>
+        </div>
+      </div>
     </div>
 
     <!-- 예약 -->
@@ -343,7 +371,7 @@
       <div class="card-head"><span class="ico">📅</span> 월 예약 현황</div>
       <div class="grid">
         <div class="slider-field">
-          <label>평일 예약 일수 <span style="color:var(--gray-400);font-weight:400">(최대 22일)</span></label>
+          <label>평일 예약 일수 <span style="color:var(--gray-400);font-weight:400;font-size:13px">(최대 22일)</span></label>
           <div class="slider-row">
             <input type="range" id="f_wdn" min="0" max="22" value="10"
               oninput="sv('f_wdn','f_wdn_v');calc()">
@@ -351,7 +379,7 @@
           </div>
         </div>
         <div class="slider-field">
-          <label>주말 예약 일수 <span style="color:var(--gray-400);font-weight:400">(최대 8일)</span></label>
+          <label>주말 예약 일수 <span style="color:var(--gray-400);font-weight:400;font-size:13px">(최대 8일)</span></label>
           <div class="slider-row">
             <input type="range" id="f_wen" min="0" max="8" value="6"
               oninput="sv('f_wen','f_wen_v');calc()">
@@ -435,10 +463,10 @@
       </div>
     </div>
 
-    <!-- 가격 (역산용) -->
+    <!-- 가격 + 검증 팁 -->
     <div class="card">
-      <div class="card-head"><span class="ico">💰</span> 1박 가격 <span style="font-size:12px;font-weight:400;color:var(--gray-600)">(점유율 역산에 사용)</span></div>
-      <div class="grid">
+      <div class="card-head"><span class="ico">💰</span> 1박 가격 <span style="font-size:14px;font-weight:400;color:var(--gray-600)">(점유율 역산에 사용)</span></div>
+      <div class="grid" style="margin-bottom:20px">
         <div class="field">
           <label>평일</label>
           <div class="input-wrap">
@@ -452,6 +480,23 @@
             <input type="number" id="r_wep" value="100000" oninput="calcRev()">
             <span class="unit">원</span>
           </div>
+        </div>
+      </div>
+
+      <!-- 검증 팁 — 가격 카드 안에 바로 배치 -->
+      <div class="tip-box">
+        <strong>💡 가격 설정 전 주변 매물 확인 방법</strong>
+        <div class="step">
+          <span class="step-num">1</span>
+          <span>에어비앤비 앱에서 <strong>게스트 모드</strong>로 접속 → 해당 매물 주변 동일 조건 숙소 검색</span>
+        </div>
+        <div class="step">
+          <span class="step-num">2</span>
+          <span>날짜 필터를 <strong>3월~8월 전체</strong>로 설정 → 이미 예약된 날짜(회색) 비율 확인</span>
+        </div>
+        <div class="step">
+          <span class="step-num">3</span>
+          <span>확인한 점유율 수준에서 <strong>역방향 결과의 필요 점유율</strong>과 비교 → 달성 가능 여부 판단</span>
         </div>
       </div>
     </div>
@@ -558,19 +603,12 @@ function calc() {
       <div class="bar"><div class="bar-fill" style="width:${Math.min(occ,100)}%;background:${barColor(occ)}"></div></div>
       <div style="text-align:center"><span class="badge ${bc}">${bl}</span></div>
     </div>
-
-    <div class="tip-box">
-      <strong>💡 검증 팁</strong><br>
-      에어비앤비 게스트 모드로 접속 → 해당 매물과 비슷한 주변 숙소 검색 →
-      날짜 필터를 3월~8월 전체로 설정해 예약 현황 확인.
-      인테리어(화이트·우드·그린)와 가격대가 비슷한 매물의 점유율을 참고해 위 슬라이더를 조정하세요.
-    </div>
   `;
 }
 
 // ─── REVERSE ───────────────────────────────────────────
 function calcRev() {
-  const tgt  = n('r_tgt');    // 만원
+  const tgt  = n('r_tgt');
   const dep  = n('r_dep');
   const rent = n('r_rent');
   const mgmt = n('r_mgmt');
@@ -582,7 +620,7 @@ function calcRev() {
   const reqRevMan     = tgt + expenseMan;
   const reqDailyMan   = reqRevMan / 30;
 
-  // reverse-solve occupancy: fill weekends first (8 days), then weekdays (22 days)
+  // 주말(8일) 먼저 채우고, 나머지를 평일로 역산
   let remaining = reqRevMan * 10000;
   const maxWeekendRev = wep * 8;
   const weekendUsed = Math.min(maxWeekendRev, remaining);
@@ -626,13 +664,6 @@ function calcRev() {
       </div>
       <div class="bar"><div class="bar-fill" style="width:${Math.min(occ,100)}%;background:${barColor(occ)}"></div></div>
       <div style="text-align:center"><span class="badge ${bc}">${bl}</span></div>
-    </div>
-
-    <div class="tip-box">
-      <strong>💡 역방향 활용법</strong><br>
-      ① 목표 순이익 슬라이더를 조정 → 필요 점유율 확인<br>
-      ② 에어비앤비에서 주변 유사 매물 점유율 실측<br>
-      ③ 실측 점유율 ≥ 필요 점유율이면 <strong>투자 진입 검토</strong>, 미달이면 가격 조정 또는 매물 재검토
     </div>
   `;
 }
