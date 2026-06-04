@@ -293,10 +293,9 @@
     <div class="card">
       <div class="card-head"><span class="ico">⚡</span> 예시 불러오기</div>
       <div class="presets">
-        <button class="preset" onclick="loadPreset('a')">투룸 (본문 예시)</button>
-        <button class="preset" onclick="loadPreset('b')">쓰리룸 빌라</button>
-        <button class="preset" onclick="loadPreset('c')">쓰리룸 도심형 A</button>
-        <button class="preset" onclick="loadPreset('d')">쓰리룸 도심형 B</button>
+        <button class="preset" onclick="loadPreset('a')">홍대 (투룸)</button>
+        <button class="preset" onclick="loadPreset('b')">이태원 (쓰리룸)</button>
+        <button class="preset" onclick="loadPreset('c')">명동 (쓰리룸)</button>
       </div>
     </div>
 
@@ -670,10 +669,9 @@ function calcRev() {
 
 // ─── PRESETS ───────────────────────────────────────────
 const PRESETS = {
-  a: { dep:1000, rent:55,  mgmt:12, wdp:80000,  wep:100000, wdn:10, wen:6, cc:18000, cn:16 },
-  b: { dep:2000, rent:80,  mgmt:15, wdp:120000, wep:150000, wdn:12, wen:7, cc:25000, cn:19 },
-  c: { dep:1000, rent:110, mgmt:20, wdp:140000, wep:180000, wdn:14, wen:8, cc:35000, cn:22 },
-  d: { dep:1000, rent:110, mgmt:15, wdp:140000, wep:180000, wdn:14, wen:8, cc:40000, cn:22 },
+  a: { dep:1000, rent:55,  mgmt:12, wdp:80000,  wep:100000, wdn:10, wen:6, cc:18000, cn:16 }, // 홍대 투룸
+  b: { dep:2000, rent:90,  mgmt:15, wdp:130000, wep:160000, wdn:13, wen:7, cc:25000, cn:20 }, // 이태원 쓰리룸
+  c: { dep:1000, rent:110, mgmt:20, wdp:140000, wep:180000, wdn:14, wen:8, cc:35000, cn:22 }, // 명동 쓰리룸
 };
 
 function loadPreset(key) {
