@@ -391,20 +391,11 @@
     <!-- 청소 -->
     <div class="card">
       <div class="card-head"><span class="ico">🧹</span> 청소 비용</div>
-      <div class="grid">
-        <div class="field">
-          <label>청소비 / 1회</label>
-          <div class="input-wrap">
-            <input type="number" id="f_cc" value="18000" oninput="calc()">
-            <span class="unit">원</span>
-          </div>
-        </div>
-        <div class="field">
-          <label>월 청소 횟수</label>
-          <div class="input-wrap">
-            <input type="number" id="f_cn" value="16" oninput="calc()">
-            <span class="unit">회</span>
-          </div>
+      <div class="field">
+        <label>월 청소비 합계 <span style="color:var(--gray-400);font-weight:400;font-size:13px">(예약 패턴 무관하게 한 달 총액으로 입력)</span></label>
+        <div class="input-wrap">
+          <input type="number" id="f_cln" value="30" oninput="calc()">
+          <span class="unit">만원</span>
         </div>
       </div>
     </div>
@@ -557,14 +548,13 @@ function calc() {
   const wep    = n('f_wep');
   const wdn    = n('f_wdn');
   const wen    = n('f_wen');
-  const cc     = n('f_cc');
-  const cn     = n('f_cn');
+  const cln    = n('f_cln');
 
   const wdRev = wdp * wdn;
   const weRev = wep * wen;
   const revenue = wdRev + weRev;
 
-  const cleanTotal = cc * cn;
+  const cleanTotal = cln * 10000;
   const expenses   = (rent + mgmt) * 10000 + cleanTotal;
   const net        = revenue - expenses;
 
@@ -585,7 +575,7 @@ function calc() {
     <hr class="div">
     <div class="row"><span class="lbl">월세</span><span class="val minus">−${man(rent)}</span></div>
     <div class="row"><span class="lbl">관리비 + 인터넷</span><span class="val minus">−${man(mgmt)}</span></div>
-    <div class="row"><span class="lbl">청소비 (${cn}회 × ${won(cc)})</span><span class="val minus">−${won(cleanTotal)}</span></div>
+    <div class="row"><span class="lbl">청소비 (월 합계)</span><span class="val minus">−${man(cln)}</span></div>
     <div class="row"><span class="lbl"><strong>총 지출</strong></span><span class="val">−${won(expenses)}</span></div>
 
     <div class="big-result ${isProfit ? 'profit' : 'loss'}">
@@ -669,9 +659,9 @@ function calcRev() {
 
 // ─── PRESETS ───────────────────────────────────────────
 const PRESETS = {
-  a: { dep:1000, rent:55,  mgmt:12, wdp:80000,  wep:100000, wdn:10, wen:6, cc:18000, cn:16 }, // 홍대 투룸
-  b: { dep:2000, rent:90,  mgmt:15, wdp:130000, wep:160000, wdn:13, wen:7, cc:25000, cn:20 }, // 이태원 쓰리룸
-  c: { dep:1000, rent:110, mgmt:20, wdp:140000, wep:180000, wdn:14, wen:8, cc:35000, cn:22 }, // 명동 쓰리룸
+  a: { dep:1000, rent:55,  mgmt:12, wdp:80000,  wep:100000, wdn:10, wen:6, cln:30 }, // 홍대 투룸
+  b: { dep:2000, rent:90,  mgmt:15, wdp:130000, wep:160000, wdn:13, wen:7, cln:35 }, // 이태원 쓰리룸
+  c: { dep:1000, rent:110, mgmt:20, wdp:140000, wep:180000, wdn:14, wen:8, cln:40 }, // 명동 쓰리룸
 };
 
 function loadPreset(key) {
@@ -683,8 +673,7 @@ function loadPreset(key) {
   $('f_wep').value  = p.wep;
   $('f_wdn').value  = p.wdn;  $('f_wdn_v').textContent = p.wdn;
   $('f_wen').value  = p.wen;  $('f_wen_v').textContent = p.wen;
-  $('f_cc').value   = p.cc;
-  $('f_cn').value   = p.cn;
+  $('f_cln').value  = p.cln;
   calc();
 }
 
